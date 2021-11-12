@@ -51,7 +51,7 @@ def pixel_boundary_check(image):
 					image[row][column][chnnl] = 255
 
 
-def color_transfer(source_image, target_image):
+def color_transfer(source_image, target_image, RESULT_IMAGE_PATH):
 	source_image_mean, source_image_std = calculate_mean_and_standart_deviation(source_image)
 	target_image_mean, target_image_std = calculate_mean_and_standart_deviation(target_image)
 
@@ -74,4 +74,4 @@ def color_transfer(source_image, target_image):
 	pixel_boundary_check(source_image)
 	source_image = source_image.astype(np.uint8)
 	source_image = Image.fromarray(source_image)
-	source_image.show()
+	source_image.save(RESULT_IMAGE_PATH, format="JPEG")

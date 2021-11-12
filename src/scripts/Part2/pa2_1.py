@@ -1,11 +1,11 @@
 from pa2_2 import color_transfer
-import cv2
 from PIL import Image 
 import numpy as np
 import math
 
-SOURCE_IMAGE_PATH = "C:\\Users\\MONSTER\\GitHub\\ImageDitheringPractice\\exampleImages\\colortransfer\\ocean_day.jpg"
-TARGET_IMAGE_PATH = "C:\\Users\\MONSTER\\GitHub\\ImageDitheringPractice\\exampleImages\\colortransfer\\ocean_sunset.jpg"
+SOURCE_IMAGE_PATH = r"src\ColorTransferImages\source4.jpg"
+TARGET_IMAGE_PATH = r"src\ColorTransferImages\target4.jpg"
+RESULT_IMAGE_PATH = r".\src\ColorTransferImages\result4.jpg"
 
 
 def RGB2LMS(image):
@@ -56,4 +56,4 @@ def read_image():
 
 
 source_image, target_image = read_image()
-color_transfer(source_image, target_image)
+color_transfer(source_image, target_image, RESULT_IMAGE_PATH)
